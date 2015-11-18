@@ -63,6 +63,16 @@ namespace TalleresDuran.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_car {
+            get {
+                object obj = ResourceManager.GetObject("add_car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_cliente {
             get {
                 object obj = ResourceManager.GetObject("add_cliente", resourceCulture);
@@ -76,6 +86,16 @@ namespace TalleresDuran.Properties {
         internal static System.Drawing.Bitmap add_employee {
             get {
                 object obj = ResourceManager.GetObject("add_employee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_work {
+            get {
+                object obj = ResourceManager.GetObject("add_work", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +123,26 @@ namespace TalleresDuran.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap del_work {
+            get {
+                object obj = ResourceManager.GetObject("del_work", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_car {
+            get {
+                object obj = ResourceManager.GetObject("edit_car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_cliente {
             get {
                 object obj = ResourceManager.GetObject("edit_cliente", resourceCulture);
@@ -123,6 +163,26 @@ namespace TalleresDuran.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_work {
+            get {
+                object obj = ResourceManager.GetObject("edit_work", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_car {
+            get {
+                object obj = ResourceManager.GetObject("show_car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap show_cliente {
             get {
                 object obj = ResourceManager.GetObject("show_cliente", resourceCulture);
@@ -136,6 +196,16 @@ namespace TalleresDuran.Properties {
         internal static System.Drawing.Bitmap show_employee {
             get {
                 object obj = ResourceManager.GetObject("show_employee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_work {
+            get {
+                object obj = ResourceManager.GetObject("show_work", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -148,6 +148,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\show_work.png" />
+    <None Include="Resources\add_work.png" />
+    <None Include="Resources\edit_work.png" />
+    <None Include="Resources\del_work.png" />
+    <None Include="Resources\edit_car.png" />
+    <None Include="Resources\show_car.png" />
+    <None Include="Resources\add_car.png" />
+    <None Include="Resources\del_employee.png" />
+    <None Include="Resources\edit_employee.png" />
+    <None Include="Resources\add_employee.png" />
+    <None Include="Resources\show_employee.png" />
     <None Include="Resources\show_cliente.png" />
     <None Include="Resources\edit_cliente.png" />
     <None Include="Resources\del_cliente.png" />

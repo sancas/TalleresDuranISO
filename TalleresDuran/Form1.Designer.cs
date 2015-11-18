@@ -37,6 +37,12 @@
             this.rbTEmpleados = new System.Windows.Forms.RibbonTab();
             this.rbPEmpleados = new System.Windows.Forms.RibbonPanel();
             this.rbPEAdministracion = new System.Windows.Forms.RibbonPanel();
+            this.rbTVehiculos = new System.Windows.Forms.RibbonTab();
+            this.rbPVehiculo = new System.Windows.Forms.RibbonPanel();
+            this.rbPVAdministracion = new System.Windows.Forms.RibbonPanel();
+            this.rbTTrabajos = new System.Windows.Forms.RibbonTab();
+            this.rbPTrabajos = new System.Windows.Forms.RibbonPanel();
+            this.rbPTAdministracion = new System.Windows.Forms.RibbonPanel();
             this.rbBMostrarClientes = new System.Windows.Forms.RibbonButton();
             this.rbBAgregarCliente = new System.Windows.Forms.RibbonButton();
             this.rbBModificarCliente = new System.Windows.Forms.RibbonButton();
@@ -45,6 +51,14 @@
             this.rbBAgregarEmpleados = new System.Windows.Forms.RibbonButton();
             this.rbBModificarEmpleado = new System.Windows.Forms.RibbonButton();
             this.rbBEliminarEmpleado = new System.Windows.Forms.RibbonButton();
+            this.rbBMostrarCarros = new System.Windows.Forms.RibbonButton();
+            this.rbBAgregarCarro = new System.Windows.Forms.RibbonButton();
+            this.rbBModificarCarro = new System.Windows.Forms.RibbonButton();
+            this.rbBEliminarAuto = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
+            this.rbBAgregarTrabajo = new System.Windows.Forms.RibbonButton();
+            this.rbBModificarTrabajo = new System.Windows.Forms.RibbonButton();
+            this.rbBEliminarTrabajo = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -79,6 +93,8 @@
             this.ribbon1.Tabs.Add(this.rbTPrincipal);
             this.ribbon1.Tabs.Add(this.rbTClientes);
             this.ribbon1.Tabs.Add(this.rbTEmpleados);
+            this.ribbon1.Tabs.Add(this.rbTVehiculos);
+            this.ribbon1.Tabs.Add(this.rbTTrabajos);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
             this.ribbon1.TabSpacing = 6;
             this.ribbon1.Text = "ribbon1";
@@ -145,6 +161,58 @@
             this.rbPEAdministracion.Items.Add(this.rbBEliminarEmpleado);
             this.rbPEAdministracion.Tag = null;
             this.rbPEAdministracion.Text = "Administracion";
+            // 
+            // rbTVehiculos
+            // 
+            this.rbTVehiculos.Panels.Add(this.rbPVehiculo);
+            this.rbTVehiculos.Panels.Add(this.rbPVAdministracion);
+            this.rbTVehiculos.Tag = null;
+            this.rbTVehiculos.Text = "Vehiculos";
+            this.rbTVehiculos.ToolTip = null;
+            this.rbTVehiculos.ToolTipIcon = System.Windows.Forms.ToolTipIcon.None;
+            this.rbTVehiculos.ToolTipImage = null;
+            this.rbTVehiculos.ToolTipTitle = null;
+            this.rbTVehiculos.Value = null;
+            // 
+            // rbPVehiculo
+            // 
+            this.rbPVehiculo.Items.Add(this.rbBMostrarCarros);
+            this.rbPVehiculo.Tag = null;
+            this.rbPVehiculo.Text = "Vehiculos";
+            // 
+            // rbPVAdministracion
+            // 
+            this.rbPVAdministracion.Items.Add(this.rbBAgregarCarro);
+            this.rbPVAdministracion.Items.Add(this.rbBModificarCarro);
+            this.rbPVAdministracion.Items.Add(this.rbBEliminarAuto);
+            this.rbPVAdministracion.Tag = null;
+            this.rbPVAdministracion.Text = "Administracion";
+            // 
+            // rbTTrabajos
+            // 
+            this.rbTTrabajos.Panels.Add(this.rbPTrabajos);
+            this.rbTTrabajos.Panels.Add(this.rbPTAdministracion);
+            this.rbTTrabajos.Tag = null;
+            this.rbTTrabajos.Text = "Trabajos";
+            this.rbTTrabajos.ToolTip = null;
+            this.rbTTrabajos.ToolTipIcon = System.Windows.Forms.ToolTipIcon.None;
+            this.rbTTrabajos.ToolTipImage = null;
+            this.rbTTrabajos.ToolTipTitle = null;
+            this.rbTTrabajos.Value = null;
+            // 
+            // rbPTrabajos
+            // 
+            this.rbPTrabajos.Items.Add(this.ribbonButton1);
+            this.rbPTrabajos.Tag = null;
+            this.rbPTrabajos.Text = "Trabajos";
+            // 
+            // rbPTAdministracion
+            // 
+            this.rbPTAdministracion.Items.Add(this.rbBAgregarTrabajo);
+            this.rbPTAdministracion.Items.Add(this.rbBModificarTrabajo);
+            this.rbPTAdministracion.Items.Add(this.rbBEliminarTrabajo);
+            this.rbPTAdministracion.Tag = null;
+            this.rbPTAdministracion.Text = "Administracion";
             // 
             // rbBMostrarClientes
             // 
@@ -223,6 +291,7 @@
             this.rbBMostrarEmpleados.ToolTip = null;
             this.rbBMostrarEmpleados.ToolTipTitle = null;
             this.rbBMostrarEmpleados.Value = null;
+            this.rbBMostrarEmpleados.Click += new System.EventHandler(this.rbBMostrarEmpleados_Click);
             // 
             // rbBAgregarEmpleados
             // 
@@ -269,6 +338,127 @@
             this.rbBEliminarEmpleado.ToolTipTitle = null;
             this.rbBEliminarEmpleado.Value = null;
             // 
+            // rbBMostrarCarros
+            // 
+            this.rbBMostrarCarros.AltKey = null;
+            this.rbBMostrarCarros.CheckedGroup = null;
+            this.rbBMostrarCarros.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBMostrarCarros.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBMostrarCarros.Image = global::TalleresDuran.Properties.Resources.show_car;
+            this.rbBMostrarCarros.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBMostrarCarros.SmallImage")));
+            this.rbBMostrarCarros.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBMostrarCarros.Tag = null;
+            this.rbBMostrarCarros.Text = "Mostrar";
+            this.rbBMostrarCarros.ToolTip = null;
+            this.rbBMostrarCarros.ToolTipTitle = null;
+            this.rbBMostrarCarros.Value = null;
+            this.rbBMostrarCarros.Click += new System.EventHandler(this.rbBMostrarCarros_Click);
+            // 
+            // rbBAgregarCarro
+            // 
+            this.rbBAgregarCarro.AltKey = null;
+            this.rbBAgregarCarro.CheckedGroup = null;
+            this.rbBAgregarCarro.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBAgregarCarro.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBAgregarCarro.Image = global::TalleresDuran.Properties.Resources.add_car;
+            this.rbBAgregarCarro.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBAgregarCarro.SmallImage")));
+            this.rbBAgregarCarro.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBAgregarCarro.Tag = null;
+            this.rbBAgregarCarro.Text = "Agregar";
+            this.rbBAgregarCarro.ToolTip = null;
+            this.rbBAgregarCarro.ToolTipTitle = null;
+            this.rbBAgregarCarro.Value = null;
+            // 
+            // rbBModificarCarro
+            // 
+            this.rbBModificarCarro.AltKey = null;
+            this.rbBModificarCarro.CheckedGroup = null;
+            this.rbBModificarCarro.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBModificarCarro.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBModificarCarro.Image = global::TalleresDuran.Properties.Resources.edit_car;
+            this.rbBModificarCarro.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBModificarCarro.SmallImage")));
+            this.rbBModificarCarro.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBModificarCarro.Tag = null;
+            this.rbBModificarCarro.Text = "Modificar";
+            this.rbBModificarCarro.ToolTip = null;
+            this.rbBModificarCarro.ToolTipTitle = null;
+            this.rbBModificarCarro.Value = null;
+            // 
+            // rbBEliminarAuto
+            // 
+            this.rbBEliminarAuto.AltKey = null;
+            this.rbBEliminarAuto.CheckedGroup = null;
+            this.rbBEliminarAuto.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBEliminarAuto.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBEliminarAuto.Image = ((System.Drawing.Image)(resources.GetObject("rbBEliminarAuto.Image")));
+            this.rbBEliminarAuto.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBEliminarAuto.SmallImage")));
+            this.rbBEliminarAuto.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBEliminarAuto.Tag = null;
+            this.rbBEliminarAuto.Text = "Eliminar";
+            this.rbBEliminarAuto.ToolTip = null;
+            this.rbBEliminarAuto.ToolTipTitle = null;
+            this.rbBEliminarAuto.Value = null;
+            // 
+            // ribbonButton1
+            // 
+            this.ribbonButton1.AltKey = null;
+            this.ribbonButton1.CheckedGroup = null;
+            this.ribbonButton1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.ribbonButton1.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.ribbonButton1.Image = global::TalleresDuran.Properties.Resources.show_work;
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+            this.ribbonButton1.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.ribbonButton1.Tag = null;
+            this.ribbonButton1.Text = "Mostrar";
+            this.ribbonButton1.ToolTip = null;
+            this.ribbonButton1.ToolTipTitle = null;
+            this.ribbonButton1.Value = null;
+            // 
+            // rbBAgregarTrabajo
+            // 
+            this.rbBAgregarTrabajo.AltKey = null;
+            this.rbBAgregarTrabajo.CheckedGroup = null;
+            this.rbBAgregarTrabajo.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBAgregarTrabajo.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBAgregarTrabajo.Image = global::TalleresDuran.Properties.Resources.add_work;
+            this.rbBAgregarTrabajo.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBAgregarTrabajo.SmallImage")));
+            this.rbBAgregarTrabajo.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBAgregarTrabajo.Tag = null;
+            this.rbBAgregarTrabajo.Text = "Agregar";
+            this.rbBAgregarTrabajo.ToolTip = null;
+            this.rbBAgregarTrabajo.ToolTipTitle = null;
+            this.rbBAgregarTrabajo.Value = null;
+            // 
+            // rbBModificarTrabajo
+            // 
+            this.rbBModificarTrabajo.AltKey = null;
+            this.rbBModificarTrabajo.CheckedGroup = null;
+            this.rbBModificarTrabajo.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBModificarTrabajo.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBModificarTrabajo.Image = global::TalleresDuran.Properties.Resources.edit_work;
+            this.rbBModificarTrabajo.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBModificarTrabajo.SmallImage")));
+            this.rbBModificarTrabajo.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBModificarTrabajo.Tag = null;
+            this.rbBModificarTrabajo.Text = "Modificar";
+            this.rbBModificarTrabajo.ToolTip = null;
+            this.rbBModificarTrabajo.ToolTipTitle = null;
+            this.rbBModificarTrabajo.Value = null;
+            // 
+            // rbBEliminarTrabajo
+            // 
+            this.rbBEliminarTrabajo.AltKey = null;
+            this.rbBEliminarTrabajo.CheckedGroup = null;
+            this.rbBEliminarTrabajo.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBEliminarTrabajo.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBEliminarTrabajo.Image = global::TalleresDuran.Properties.Resources.del_work;
+            this.rbBEliminarTrabajo.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBEliminarTrabajo.SmallImage")));
+            this.rbBEliminarTrabajo.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBEliminarTrabajo.Tag = null;
+            this.rbBEliminarTrabajo.Text = "Eliminar";
+            this.rbBEliminarTrabajo.ToolTip = null;
+            this.rbBEliminarTrabajo.ToolTipTitle = null;
+            this.rbBEliminarTrabajo.Value = null;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,6 +490,20 @@
         private System.Windows.Forms.RibbonButton rbBAgregarEmpleados;
         private System.Windows.Forms.RibbonButton rbBModificarEmpleado;
         private System.Windows.Forms.RibbonButton rbBEliminarEmpleado;
+        private System.Windows.Forms.RibbonTab rbTVehiculos;
+        private System.Windows.Forms.RibbonPanel rbPVehiculo;
+        private System.Windows.Forms.RibbonButton rbBMostrarCarros;
+        private System.Windows.Forms.RibbonPanel rbPVAdministracion;
+        private System.Windows.Forms.RibbonButton rbBAgregarCarro;
+        private System.Windows.Forms.RibbonButton rbBModificarCarro;
+        private System.Windows.Forms.RibbonButton rbBEliminarAuto;
+        private System.Windows.Forms.RibbonTab rbTTrabajos;
+        private System.Windows.Forms.RibbonPanel rbPTrabajos;
+        private System.Windows.Forms.RibbonButton ribbonButton1;
+        private System.Windows.Forms.RibbonPanel rbPTAdministracion;
+        private System.Windows.Forms.RibbonButton rbBAgregarTrabajo;
+        private System.Windows.Forms.RibbonButton rbBModificarTrabajo;
+        private System.Windows.Forms.RibbonButton rbBEliminarTrabajo;
     }
 }
 

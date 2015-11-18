@@ -61,6 +61,14 @@ namespace TalleresDuran
         {
             if (ribbon1.ActiveTab.Text == "Clientes")
                 rbBMostrarClientes.PerformClick();
+            else if (ribbon1.ActiveTab.Text == "Empleados")
+                rbBMostrarEmpleados.PerformClick();
+            else if (ribbon1.ActiveTab.Text == "Vehiculos")
+                rbBMostrarCarros.PerformClick();
+            else
+            {
+
+            }
         }
 
         private void rbBMostrarClientes_Click(object sender, EventArgs e)
@@ -73,10 +81,42 @@ namespace TalleresDuran
                     return;
                 }
             }
-            Mostrar cliente = new Mostrar();
-            cliente.MdiParent = this;
-            cliente.MeterDatos(Taller, 0);
-            cliente.Show();
+            Mostrar clientes = new Mostrar();
+            clientes.MdiParent = this;
+            clientes.MeterDatos(Taller, 0);
+            clientes.Show();
+        }
+
+        private void rbBMostrarEmpleados_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(Form1))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Mostrar empleados = new Mostrar();
+            empleados.MdiParent = this;
+            empleados.MeterDatos(Taller, 1);
+            empleados.Show();
+        }
+
+        private void rbBMostrarCarros_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(Form1))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Mostrar vehiculos = new Mostrar();
+            vehiculos.MdiParent = this;
+            vehiculos.MeterDatos(Taller, 2);
+            vehiculos.Show();
         }
     }
 }
