@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.rbTPrincipal = new System.Windows.Forms.RibbonTab();
             this.rbTClientes = new System.Windows.Forms.RibbonTab();
             this.rbPClientes = new System.Windows.Forms.RibbonPanel();
@@ -40,9 +39,10 @@
             this.rbTVehiculos = new System.Windows.Forms.RibbonTab();
             this.rbPVehiculo = new System.Windows.Forms.RibbonPanel();
             this.rbPVAdministracion = new System.Windows.Forms.RibbonPanel();
-            this.rbTTrabajos = new System.Windows.Forms.RibbonTab();
-            this.rbPTrabajos = new System.Windows.Forms.RibbonPanel();
-            this.rbPTAdministracion = new System.Windows.Forms.RibbonPanel();
+            this.rbTFacturas = new System.Windows.Forms.RibbonTab();
+            this.rbPFacturas = new System.Windows.Forms.RibbonPanel();
+            this.rbPFAdministracion = new System.Windows.Forms.RibbonPanel();
+            this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.rbBMostrarClientes = new System.Windows.Forms.RibbonButton();
             this.rbBAgregarCliente = new System.Windows.Forms.RibbonButton();
             this.rbBModificarCliente = new System.Windows.Forms.RibbonButton();
@@ -55,50 +55,11 @@
             this.rbBAgregarCarro = new System.Windows.Forms.RibbonButton();
             this.rbBModificarCarro = new System.Windows.Forms.RibbonButton();
             this.rbBEliminarAuto = new System.Windows.Forms.RibbonButton();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
-            this.rbBAgregarTrabajo = new System.Windows.Forms.RibbonButton();
-            this.rbBModificarTrabajo = new System.Windows.Forms.RibbonButton();
-            this.rbBEliminarTrabajo = new System.Windows.Forms.RibbonButton();
+            this.rbBMostrarFacturas = new System.Windows.Forms.RibbonButton();
+            this.rbBAgregarFactura = new System.Windows.Forms.RibbonButton();
+            this.rbBModificarFactura = new System.Windows.Forms.RibbonButton();
+            this.rbBEliminarFactura = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
-            // 
-            // ribbon1
-            // 
-            this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ribbon1.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.Name = "ribbon1";
-            // 
-            // 
-            // 
-            this.ribbon1.OrbDropDown.BorderRoundness = 8;
-            this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.OrbDropDown.Name = "";
-            this.ribbon1.OrbDropDown.RecentItemsCaption = null;
-            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 447);
-            this.ribbon1.OrbDropDown.TabIndex = 0;
-            this.ribbon1.OrbImage = null;
-            this.ribbon1.OrbText = null;
-            // 
-            // 
-            // 
-            this.ribbon1.QuickAcessToolbar.AltKey = null;
-            this.ribbon1.QuickAcessToolbar.CheckedGroup = null;
-            this.ribbon1.QuickAcessToolbar.Image = null;
-            this.ribbon1.QuickAcessToolbar.Tag = null;
-            this.ribbon1.QuickAcessToolbar.Text = null;
-            this.ribbon1.QuickAcessToolbar.ToolTip = null;
-            this.ribbon1.QuickAcessToolbar.ToolTipTitle = null;
-            this.ribbon1.QuickAcessToolbar.Value = null;
-            this.ribbon1.Size = new System.Drawing.Size(737, 159);
-            this.ribbon1.TabIndex = 0;
-            this.ribbon1.Tabs.Add(this.rbTPrincipal);
-            this.ribbon1.Tabs.Add(this.rbTClientes);
-            this.ribbon1.Tabs.Add(this.rbTEmpleados);
-            this.ribbon1.Tabs.Add(this.rbTVehiculos);
-            this.ribbon1.Tabs.Add(this.rbTTrabajos);
-            this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
-            this.ribbon1.TabSpacing = 6;
-            this.ribbon1.Text = "ribbon1";
-            this.ribbon1.ActiveTabChanged += new System.EventHandler(this.ribbon1_ActiveTabChanged);
             // 
             // rbTPrincipal
             // 
@@ -188,31 +149,70 @@
             this.rbPVAdministracion.Tag = null;
             this.rbPVAdministracion.Text = "Administracion";
             // 
-            // rbTTrabajos
+            // rbTFacturas
             // 
-            this.rbTTrabajos.Panels.Add(this.rbPTrabajos);
-            this.rbTTrabajos.Panels.Add(this.rbPTAdministracion);
-            this.rbTTrabajos.Tag = null;
-            this.rbTTrabajos.Text = "Trabajos";
-            this.rbTTrabajos.ToolTip = null;
-            this.rbTTrabajos.ToolTipIcon = System.Windows.Forms.ToolTipIcon.None;
-            this.rbTTrabajos.ToolTipImage = null;
-            this.rbTTrabajos.ToolTipTitle = null;
-            this.rbTTrabajos.Value = null;
+            this.rbTFacturas.Panels.Add(this.rbPFacturas);
+            this.rbTFacturas.Panels.Add(this.rbPFAdministracion);
+            this.rbTFacturas.Tag = null;
+            this.rbTFacturas.Text = "Facturas";
+            this.rbTFacturas.ToolTip = null;
+            this.rbTFacturas.ToolTipIcon = System.Windows.Forms.ToolTipIcon.None;
+            this.rbTFacturas.ToolTipImage = null;
+            this.rbTFacturas.ToolTipTitle = null;
+            this.rbTFacturas.Value = null;
             // 
-            // rbPTrabajos
+            // rbPFacturas
             // 
-            this.rbPTrabajos.Items.Add(this.ribbonButton1);
-            this.rbPTrabajos.Tag = null;
-            this.rbPTrabajos.Text = "Trabajos";
+            this.rbPFacturas.Items.Add(this.rbBMostrarFacturas);
+            this.rbPFacturas.Tag = null;
+            this.rbPFacturas.Text = "Facturas";
             // 
-            // rbPTAdministracion
+            // rbPFAdministracion
             // 
-            this.rbPTAdministracion.Items.Add(this.rbBAgregarTrabajo);
-            this.rbPTAdministracion.Items.Add(this.rbBModificarTrabajo);
-            this.rbPTAdministracion.Items.Add(this.rbBEliminarTrabajo);
-            this.rbPTAdministracion.Tag = null;
-            this.rbPTAdministracion.Text = "Administracion";
+            this.rbPFAdministracion.Items.Add(this.rbBAgregarFactura);
+            this.rbPFAdministracion.Items.Add(this.rbBModificarFactura);
+            this.rbPFAdministracion.Items.Add(this.rbBEliminarFactura);
+            this.rbPFAdministracion.Tag = null;
+            this.rbPFAdministracion.Text = "Administracion";
+            // 
+            // ribbon1
+            // 
+            this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ribbon1.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.Name = "ribbon1";
+            // 
+            // 
+            // 
+            this.ribbon1.OrbDropDown.BorderRoundness = 8;
+            this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.OrbDropDown.Name = "";
+            this.ribbon1.OrbDropDown.RecentItemsCaption = null;
+            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 447);
+            this.ribbon1.OrbDropDown.TabIndex = 0;
+            this.ribbon1.OrbImage = global::TalleresDuran.Properties.Resources.TalleresDuran;
+            this.ribbon1.OrbText = null;
+            // 
+            // 
+            // 
+            this.ribbon1.QuickAcessToolbar.AltKey = null;
+            this.ribbon1.QuickAcessToolbar.CheckedGroup = null;
+            this.ribbon1.QuickAcessToolbar.Image = null;
+            this.ribbon1.QuickAcessToolbar.Tag = null;
+            this.ribbon1.QuickAcessToolbar.Text = null;
+            this.ribbon1.QuickAcessToolbar.ToolTip = null;
+            this.ribbon1.QuickAcessToolbar.ToolTipTitle = null;
+            this.ribbon1.QuickAcessToolbar.Value = null;
+            this.ribbon1.Size = new System.Drawing.Size(737, 159);
+            this.ribbon1.TabIndex = 0;
+            this.ribbon1.Tabs.Add(this.rbTPrincipal);
+            this.ribbon1.Tabs.Add(this.rbTClientes);
+            this.ribbon1.Tabs.Add(this.rbTEmpleados);
+            this.ribbon1.Tabs.Add(this.rbTVehiculos);
+            this.ribbon1.Tabs.Add(this.rbTFacturas);
+            this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
+            this.ribbon1.TabSpacing = 6;
+            this.ribbon1.Text = "ribbon1";
+            this.ribbon1.ActiveTabChanged += new System.EventHandler(this.ribbon1_ActiveTabChanged);
             // 
             // rbBMostrarClientes
             // 
@@ -307,6 +307,7 @@
             this.rbBAgregarEmpleados.ToolTip = null;
             this.rbBAgregarEmpleados.ToolTipTitle = null;
             this.rbBAgregarEmpleados.Value = null;
+            this.rbBAgregarEmpleados.Click += new System.EventHandler(this.rbBAgregarEmpleados_Click);
             // 
             // rbBModificarEmpleado
             // 
@@ -368,6 +369,7 @@
             this.rbBAgregarCarro.ToolTip = null;
             this.rbBAgregarCarro.ToolTipTitle = null;
             this.rbBAgregarCarro.Value = null;
+            this.rbBAgregarCarro.Click += new System.EventHandler(this.rbBAgregarCarro_Click);
             // 
             // rbBModificarCarro
             // 
@@ -399,65 +401,65 @@
             this.rbBEliminarAuto.ToolTipTitle = null;
             this.rbBEliminarAuto.Value = null;
             // 
-            // ribbonButton1
+            // rbBMostrarFacturas
             // 
-            this.ribbonButton1.AltKey = null;
-            this.ribbonButton1.CheckedGroup = null;
-            this.ribbonButton1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.ribbonButton1.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.ribbonButton1.Image = global::TalleresDuran.Properties.Resources.show_work;
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.ribbonButton1.Tag = null;
-            this.ribbonButton1.Text = "Mostrar";
-            this.ribbonButton1.ToolTip = null;
-            this.ribbonButton1.ToolTipTitle = null;
-            this.ribbonButton1.Value = null;
+            this.rbBMostrarFacturas.AltKey = null;
+            this.rbBMostrarFacturas.CheckedGroup = null;
+            this.rbBMostrarFacturas.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBMostrarFacturas.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBMostrarFacturas.Image = global::TalleresDuran.Properties.Resources.show_facturas;
+            this.rbBMostrarFacturas.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBMostrarFacturas.SmallImage")));
+            this.rbBMostrarFacturas.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBMostrarFacturas.Tag = null;
+            this.rbBMostrarFacturas.Text = "Facturas";
+            this.rbBMostrarFacturas.ToolTip = null;
+            this.rbBMostrarFacturas.ToolTipTitle = null;
+            this.rbBMostrarFacturas.Value = null;
             // 
-            // rbBAgregarTrabajo
+            // rbBAgregarFactura
             // 
-            this.rbBAgregarTrabajo.AltKey = null;
-            this.rbBAgregarTrabajo.CheckedGroup = null;
-            this.rbBAgregarTrabajo.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbBAgregarTrabajo.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbBAgregarTrabajo.Image = global::TalleresDuran.Properties.Resources.add_work;
-            this.rbBAgregarTrabajo.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBAgregarTrabajo.SmallImage")));
-            this.rbBAgregarTrabajo.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbBAgregarTrabajo.Tag = null;
-            this.rbBAgregarTrabajo.Text = "Agregar";
-            this.rbBAgregarTrabajo.ToolTip = null;
-            this.rbBAgregarTrabajo.ToolTipTitle = null;
-            this.rbBAgregarTrabajo.Value = null;
+            this.rbBAgregarFactura.AltKey = null;
+            this.rbBAgregarFactura.CheckedGroup = null;
+            this.rbBAgregarFactura.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBAgregarFactura.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBAgregarFactura.Image = global::TalleresDuran.Properties.Resources.add_facturas;
+            this.rbBAgregarFactura.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBAgregarFactura.SmallImage")));
+            this.rbBAgregarFactura.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBAgregarFactura.Tag = null;
+            this.rbBAgregarFactura.Text = "Agregar";
+            this.rbBAgregarFactura.ToolTip = null;
+            this.rbBAgregarFactura.ToolTipTitle = null;
+            this.rbBAgregarFactura.Value = null;
             // 
-            // rbBModificarTrabajo
+            // rbBModificarFactura
             // 
-            this.rbBModificarTrabajo.AltKey = null;
-            this.rbBModificarTrabajo.CheckedGroup = null;
-            this.rbBModificarTrabajo.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbBModificarTrabajo.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbBModificarTrabajo.Image = global::TalleresDuran.Properties.Resources.edit_work;
-            this.rbBModificarTrabajo.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBModificarTrabajo.SmallImage")));
-            this.rbBModificarTrabajo.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbBModificarTrabajo.Tag = null;
-            this.rbBModificarTrabajo.Text = "Modificar";
-            this.rbBModificarTrabajo.ToolTip = null;
-            this.rbBModificarTrabajo.ToolTipTitle = null;
-            this.rbBModificarTrabajo.Value = null;
+            this.rbBModificarFactura.AltKey = null;
+            this.rbBModificarFactura.CheckedGroup = null;
+            this.rbBModificarFactura.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBModificarFactura.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBModificarFactura.Image = global::TalleresDuran.Properties.Resources.edit_facturas;
+            this.rbBModificarFactura.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBModificarFactura.SmallImage")));
+            this.rbBModificarFactura.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBModificarFactura.Tag = null;
+            this.rbBModificarFactura.Text = "Modificar";
+            this.rbBModificarFactura.ToolTip = null;
+            this.rbBModificarFactura.ToolTipTitle = null;
+            this.rbBModificarFactura.Value = null;
             // 
-            // rbBEliminarTrabajo
+            // rbBEliminarFactura
             // 
-            this.rbBEliminarTrabajo.AltKey = null;
-            this.rbBEliminarTrabajo.CheckedGroup = null;
-            this.rbBEliminarTrabajo.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
-            this.rbBEliminarTrabajo.DropDownArrowSize = new System.Drawing.Size(5, 3);
-            this.rbBEliminarTrabajo.Image = global::TalleresDuran.Properties.Resources.del_work;
-            this.rbBEliminarTrabajo.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBEliminarTrabajo.SmallImage")));
-            this.rbBEliminarTrabajo.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
-            this.rbBEliminarTrabajo.Tag = null;
-            this.rbBEliminarTrabajo.Text = "Eliminar";
-            this.rbBEliminarTrabajo.ToolTip = null;
-            this.rbBEliminarTrabajo.ToolTipTitle = null;
-            this.rbBEliminarTrabajo.Value = null;
+            this.rbBEliminarFactura.AltKey = null;
+            this.rbBEliminarFactura.CheckedGroup = null;
+            this.rbBEliminarFactura.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Down;
+            this.rbBEliminarFactura.DropDownArrowSize = new System.Drawing.Size(5, 3);
+            this.rbBEliminarFactura.Image = global::TalleresDuran.Properties.Resources.del_facturas;
+            this.rbBEliminarFactura.SmallImage = ((System.Drawing.Image)(resources.GetObject("rbBEliminarFactura.SmallImage")));
+            this.rbBEliminarFactura.Style = System.Windows.Forms.RibbonButtonStyle.Normal;
+            this.rbBEliminarFactura.Tag = null;
+            this.rbBEliminarFactura.Text = "Eliminar";
+            this.rbBEliminarFactura.ToolTip = null;
+            this.rbBEliminarFactura.ToolTipTitle = null;
+            this.rbBEliminarFactura.Value = null;
             // 
             // Form1
             // 
@@ -465,9 +467,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 514);
             this.Controls.Add(this.ribbon1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Talleres Duran";
             this.ResumeLayout(false);
 
         }
@@ -497,13 +500,13 @@
         private System.Windows.Forms.RibbonButton rbBAgregarCarro;
         private System.Windows.Forms.RibbonButton rbBModificarCarro;
         private System.Windows.Forms.RibbonButton rbBEliminarAuto;
-        private System.Windows.Forms.RibbonTab rbTTrabajos;
-        private System.Windows.Forms.RibbonPanel rbPTrabajos;
-        private System.Windows.Forms.RibbonButton ribbonButton1;
-        private System.Windows.Forms.RibbonPanel rbPTAdministracion;
-        private System.Windows.Forms.RibbonButton rbBAgregarTrabajo;
-        private System.Windows.Forms.RibbonButton rbBModificarTrabajo;
-        private System.Windows.Forms.RibbonButton rbBEliminarTrabajo;
+        private System.Windows.Forms.RibbonTab rbTFacturas;
+        private System.Windows.Forms.RibbonPanel rbPFacturas;
+        private System.Windows.Forms.RibbonPanel rbPFAdministracion;
+        private System.Windows.Forms.RibbonButton rbBAgregarFactura;
+        private System.Windows.Forms.RibbonButton rbBModificarFactura;
+        private System.Windows.Forms.RibbonButton rbBEliminarFactura;
+        private System.Windows.Forms.RibbonButton rbBMostrarFacturas;
     }
 }
 

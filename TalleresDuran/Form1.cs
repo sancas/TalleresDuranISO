@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace TalleresDuran
 {
@@ -21,6 +22,21 @@ namespace TalleresDuran
             Taller.Clientes.Add(new CClientes(1, "Cristian", "Sanchez", "Rpto. 1 Calle Nic", "04845876-8", 22, "MASCULINO"));
             Taller.Clientes.Add(new CClientes(2, "Kevin", "Ferman", "Haya por quezalte", "07452356-6", 22, "MASCULINO"));
             Taller.Clientes.Add(new CClientes(3, "Oscar", "Marcial", "Re-lejos... por perulapia", "06341875-4", 22, "FEMENINO"));
+        }
+
+        public static string MD5Encrypt(string value)
+        {
+            MD5CryptoServiceProvider provider = new MD5CryptoServiceProvider();
+
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(value);
+            data = provider.ComputeHash(data);
+
+            string md5 = string.Empty;
+
+            for (int i = 0; i < data.Length; i++)
+                md5 += data[i].ToString("x2").ToLower();
+
+            return md5;
         }
 
         private void rbBAgregarCliente_Click(object sender, EventArgs e)
@@ -65,6 +81,8 @@ namespace TalleresDuran
                 rbBMostrarEmpleados.PerformClick();
             else if (ribbon1.ActiveTab.Text == "Vehiculos")
                 rbBMostrarCarros.PerformClick();
+            else if (ribbon1.ActiveTab.Text == "Facturas")
+                rbBMostrarFacturas.PerformClick();
             else
             {
 
@@ -117,6 +135,53 @@ namespace TalleresDuran
             vehiculos.MdiParent = this;
             vehiculos.MeterDatos(Taller, 2);
             vehiculos.Show();
+        }
+
+        private void rbBAgregarEmpleados_Click(object sender, EventArgs e)
+        {
+            AgregarEmpleado empleado = new AgregarEmpleado();
+            empleado.ShowDialog();
+            if (empleado.DialogResult == DialogResult.OK)
+            {
+                Taller.Empleados.Add(new CEmpleados(
+                    int.Parse(empleado.txtID.Text),
+                    empleado.txtNombre.Text,
+                    empleado.txtApellido.Text,
+                    int.Parse(empleado.txtEdad.Value.ToString()),
+                    empleado.txtDui.Text,
+                    empleado.txtDireccion.Text,
+                    empleado.cmbSexo.Text,
+                    empleado.cmbCargo.Text,
+                    MD5Encrypt("123456")
+                    ));
+                MessageBox.Show("Empleado ingresado.");
+                rbBMostrarEmpleados.PerformClick();
+            }
+        }
+
+        private void rbBAgregarCarro_Click(object sender, EventArgs e)
+        {
+            AgregarVehiculo vehiculo = new AgregarVehiculo();
+            foreach (CClientes cliente in Taller.Clientes)
+            {
+                vehiculo.cmbIdCliente.Items.Add(cliente.id_cliente);
+            }
+            vehiculo.ShowDialog();
+            if (vehiculo.DialogResult == DialogResult.OK)
+            {
+                Taller.Vehiculos.Add(new CVehiculo(
+                    int.Parse(vehiculo.txtIdVehiculo.Text),
+                    Taller.Clientes.Find(v => v.id_cliente.ToString() == vehiculo.cmbIdCliente.Text),
+                    vehiculo.txtVehiculo.Text,
+                    int.Parse(vehiculo.txtPlacas.Text),
+                    vehiculo.txtAnho.Text,
+                    vehiculo.txtColor.Text,
+                    vehiculo.txtModelo.Text,
+                    vehiculo.txtDescripcion.Text
+                    ));
+                MessageBox.Show("Vehiculo ingresado.");
+                rbBMostrarCarros.PerformClick();
+            }
         }
     }
 }
