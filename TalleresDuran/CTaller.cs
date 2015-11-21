@@ -12,7 +12,7 @@ namespace TalleresDuran
         public List<CTrabajos> Trabajos;
         public List<CClientes> Clientes;
         public List<CVehiculo> Vehiculos;
-        //public List<CFacturas> Facturas;
+        public List<CFacturas> Facturas;
 
         public CTaller()
         {
@@ -20,6 +20,7 @@ namespace TalleresDuran
             Trabajos = new List<CTrabajos>();
             Clientes = new List<CClientes>();
             Vehiculos = new List<CVehiculo>();
+            Facturas = new List<CFacturas>();
         }
     }
 }

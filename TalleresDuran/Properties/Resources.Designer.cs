@@ -93,9 +93,39 @@ namespace TalleresDuran.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_facturas {
+        internal static System.Drawing.Bitmap add_work {
             get {
-                object obj = ResourceManager.GetObject("add_facturas", resourceCulture);
+                object obj = ResourceManager.GetObject("add_work", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap banner {
+            get {
+                object obj = ResourceManager.GetObject("banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap car {
+            get {
+                object obj = ResourceManager.GetObject("car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap del_car {
+            get {
+                object obj = ResourceManager.GetObject("del_car", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +153,9 @@ namespace TalleresDuran.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap del_facturas {
+        internal static System.Drawing.Bitmap del_work {
             get {
-                object obj = ResourceManager.GetObject("del_facturas", resourceCulture);
+                object obj = ResourceManager.GetObject("del_work", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +193,9 @@ namespace TalleresDuran.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit_facturas {
+        internal static System.Drawing.Bitmap edit_work {
             get {
-                object obj = ResourceManager.GetObject("edit_facturas", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_work", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +236,16 @@ namespace TalleresDuran.Properties {
         internal static System.Drawing.Bitmap show_facturas {
             get {
                 object obj = ResourceManager.GetObject("show_facturas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_work {
+            get {
+                object obj = ResourceManager.GetObject("show_work", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

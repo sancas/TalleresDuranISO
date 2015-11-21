@@ -123,8 +123,27 @@ namespace TalleresDuran
                         dgDatos.Rows.Add(Datos);
                     }
                     break;
+                case 4: //Facturas
+                    dgDatos.Columns.Add("id_factura", "ID Factura");
+                    dgDatos.Columns.Add("id_vehiculo", "ID Vehiculo");
+                    dgDatos.Columns.Add("trabajos", "Trabajos");
+                    dgDatos.Columns.Add("descripcion", "Descripcion");
+                    dgDatos.Columns.Add("total", "Total");
+                    foreach (CFacturas factura in taller.Facturas)
+                    {
+                        string[] Datos =
+                        {
+                            factura.id_factura.ToString(),
+                            factura.id_vehiculo.id_vehiculo.ToString(),
+                            factura.cuentas.Count.ToString(),
+                            factura.descripcion,
+                            factura.total.ToString()
+                        };
+                        dgDatos.Rows.Add(Datos);
+                    }
+                    break;
                 default:
-                    break;         
+                    break;
             }
         }
     }

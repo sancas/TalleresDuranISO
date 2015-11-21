@@ -22,6 +22,11 @@ namespace TalleresDuran
             Taller.Clientes.Add(new CClientes(1, "Cristian", "Sanchez", "Rpto. 1 Calle Nic", "04845876-8", 22, "MASCULINO"));
             Taller.Clientes.Add(new CClientes(2, "Kevin", "Ferman", "Haya por quezalte", "07452356-6", 22, "MASCULINO"));
             Taller.Clientes.Add(new CClientes(3, "Oscar", "Marcial", "Re-lejos... por perulapia", "06341875-4", 22, "FEMENINO"));
+            Taller.Empleados.Add(new CEmpleados(1, "Juan", "Garcia", 35, "07432124-8", "Calle lopez jugar historico", "MASCULINO", "MECANICO", ""));
+            Taller.Empleados.Add(new CEmpleados(2, "Lucas", "Lopez", 55, "65334215-6", "Parque el grid calle las americas", "MASCULINO", "JEFE", ""));
+            Taller.Vehiculos.Add(new CVehiculo(1, Taller.Clientes[0], "Toyota", 242145, "2015", "Blanco", "Yaris", "Se vino el carro con choque delantero, con las luces arruinadas"));
+            Taller.Trabajos.Add(new CTrabajos(1, Taller.Empleados[1], Taller.Vehiculos[0], "Reemplazo de capo", "Se reempazo el capo por uno nuevo", "SIN INICIAR", 225.22));
+            Taller.Trabajos.Add(new CTrabajos(2, Taller.Empleados[1], Taller.Vehiculos[0], "Cambio de luces delanteras", "Se cambiaron los focos delanteros ya que quedaron inutilizables", "TERMINADO", 159.99));
         }
 
         public static string MD5Encrypt(string value)
@@ -81,11 +86,16 @@ namespace TalleresDuran
                 rbBMostrarEmpleados.PerformClick();
             else if (ribbon1.ActiveTab.Text == "Vehiculos")
                 rbBMostrarCarros.PerformClick();
+            else if (ribbon1.ActiveTab.Text == "Trabajos")
+                rbBMostrarTrabajos.PerformClick();
             else if (ribbon1.ActiveTab.Text == "Facturas")
                 rbBMostrarFacturas.PerformClick();
             else
             {
-
+                while (this.ActiveMdiChild != null)
+                {
+                    this.ActiveMdiChild.Close();
+                }
             }
         }
 
@@ -182,6 +192,99 @@ namespace TalleresDuran
                 MessageBox.Show("Vehiculo ingresado.");
                 rbBMostrarCarros.PerformClick();
             }
+        }
+
+        private void rbBMostrarTrabajos_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(Form1))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Mostrar trabajos = new Mostrar();
+            trabajos.MdiParent = this;
+            trabajos.MeterDatos(Taller, 3);
+            trabajos.Show();
+        }
+
+        private void rbBAgregarTrabajo_Click(object sender, EventArgs e)
+        {
+            AgregarTrabajo trabajo = new AgregarTrabajo();
+            foreach (CVehiculo vehiculo in Taller.Vehiculos)
+            {
+                trabajo.cmbIDEmpleado.Items.Add(vehiculo.id_vehiculo);
+            }
+            foreach (CEmpleados empleado in Taller.Empleados)
+            {
+                trabajo.cmbIDEmpleado.Items.Add(empleado.id_empleado);
+            }
+            trabajo.ShowDialog();
+            if (trabajo.DialogResult == DialogResult.OK)
+            {
+                Taller.Trabajos.Add(new CTrabajos(
+                    int.Parse(trabajo.txtIDTrabajo.Text),
+                    Taller.Empleados.Find(v => v.id_empleado.ToString() == trabajo.cmbIDEmpleado.Text),
+                    Taller.Vehiculos.Find(v => v.id_vehiculo.ToString() == trabajo.cmbIDVehiculo.Text),
+                    trabajo.txtNombre.Text,
+                    trabajo.txtDescripcion.Text,
+                    trabajo.cmbEstado.Text,
+                    double.Parse(trabajo.txtCosto.Value.ToString())
+                    ));
+                MessageBox.Show("Trabajo Agregado");
+                rbBMostrarTrabajos.PerformClick();
+            }
+        }
+
+        private void rbBEntregarAuto_Click(object sender, EventArgs e)
+        {
+            EntregarAuto factura = new EntregarAuto();
+            foreach (CVehiculo vehiculo in Taller.Vehiculos)
+            {
+                factura.cmbID.Items.Add(vehiculo.id_vehiculo);
+            }
+            factura.ShowDialog();
+            if (factura.DialogResult == DialogResult.OK)
+            {
+                double total = 0;
+                List<CTrabajos> losTrabajos = new List<CTrabajos>();
+                foreach (CTrabajos trabajo in Taller.Trabajos)
+                {
+                    if (trabajo.id_vehiculo == Taller.Vehiculos.Find(v => v.id_vehiculo.ToString() == factura.cmbID.Text))
+                    {
+                        losTrabajos.Add(trabajo);
+                        total += trabajo.costo;
+                        trabajo.estado = "TERMINADO";
+                    }
+                }
+                Taller.Facturas.Add(new CFacturas(
+                    Taller.Facturas.Count,
+                    Taller.Vehiculos.Find(v => v.id_vehiculo.ToString() == factura.cmbID.Text),
+                    losTrabajos,
+                    factura.txtDescripcion.Text,
+                    total
+                    ));
+                ribbon1.ActiveTab = ribbon1.Tabs.Find(v => v.Text == "Facturas");
+                rbBMostrarFacturas.PerformClick();
+            }
+        }
+
+        private void rbBMostrarFacturas_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(Form1))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Mostrar facturas = new Mostrar();
+            facturas.MdiParent = this;
+            facturas.MeterDatos(Taller, 4);
+            facturas.Show();
         }
     }
 }

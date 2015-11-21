@@ -32,12 +32,5 @@ namespace TalleresDuran
             this.cargo = cargo;
             this.password = password;
         }
-
-        public CTrabajos RecibirTrabajo(int id_trabajo, CVehiculo vehiculo, string nombre, 
-            string descripcion)
-        {
-            CTrabajos temp = new CTrabajos(id_trabajo, this, vehiculo, nombre, descripcion, "Empezando");
-            return temp;
-        }
     }
 }

@@ -14,9 +14,10 @@ namespace TalleresDuran
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public string estado { get; set; }
+        public double costo { get; set; }
 
         public CTrabajos(int id_trabajo, CEmpleados id_empleado, CVehiculo id_vehiculo,
-            string nombre, string descripcion, string estado)
+            string nombre, string descripcion, string estado, double costo)
         {
             this.id_trabajo = id_trabajo;
             this.id_empleado = id_empleado;
@@ -24,6 +25,7 @@ namespace TalleresDuran
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.estado = estado;
+            this.costo = costo;
         }
     }
 }
